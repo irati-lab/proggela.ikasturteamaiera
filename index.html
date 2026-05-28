@@ -252,7 +252,7 @@
         }
 
         .timeline-item.active .timeline-body {
-            max-height: 500px;
+            max-height: 600px;
             padding: 1.5rem;
             border-top: 1px solid var(--border);
         }
@@ -267,15 +267,29 @@
             color: #4b5563;
         }
 
+        /* EREDUEN ETIKETAK (C ETA E) */
         .group-tag {
-            display: inline-block;
-            background: #e5e7eb;
-            color: #374151;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
             font-weight: 600;
             margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tag-c { 
+            background-color: #eff6ff; 
+            color: #1d4ed8; 
+            border: 1px solid #bfdbfe; 
+        }
+
+        .tag-e { 
+            background-color: #f0fdf4; 
+            color: #15803d; 
+            border: 1px solid #bbf7d0; 
         }
 
         .resource-link {
@@ -306,6 +320,109 @@
             border-radius: 0 8px 8px 0;
             margin-bottom: 2rem;
             color: #92400e;
+        }
+
+        /* --- EGUTEGIA (CALENDAR) --- */
+        .calendar-widget {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .calendar-header h3 {
+            font-size: 1.2rem;
+            color: #1f2937;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            text-align: center;
+        }
+
+        .cal-head {
+            font-weight: 700;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .cal-day {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 0.5rem;
+            min-height: 70px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .cal-day.disabled {
+            background: #f1f5f9;
+            color: #94a3b8;
+            opacity: 0.5;
+        }
+
+        .event-dots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            justify-content: center;
+            margin-top: auto;
+            padding-top: 5px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        
+        .dot-fk { background-color: var(--accent-fk); }
+        .dot-val1 { background-color: var(--accent-val1); }
+        .dot-val2 { background-color: var(--accent-val2); }
+        .dot-izot { background-color: var(--accent-izot); }
+
+        .calendar-legend {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #4b5563;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+        }
+        
+        .legend-note {
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+            color: #6b7280;
         }
 
     </style>
@@ -348,6 +465,54 @@
             
             <div class="info-panel">
                 <i class="fa-solid fa-circle-info"></i> Ongi etorri zure irakasle-panelera. Hemen dituzu eskuragarri azken txanparako unitate didaktikoak, baliabideak eta ebaluazio-tresnak. Nabigatu ezkerreko menuan ikasgai bakoitzaren plangintza ikusteko.
+            </div>
+
+            <!-- EGUTEGIA WIDGETA -->
+            <div class="calendar-widget">
+                <div class="calendar-header">
+                    <h3>Ekaina 2026</h3>
+                </div>
+                <div class="calendar-grid">
+                    <div class="cal-head">Al</div>
+                    <div class="cal-head">Ar</div>
+                    <div class="cal-head">Az</div>
+                    <div class="cal-head">Og</div>
+                    <div class="cal-head">Ol</div>
+                    <div class="cal-head">Lr</div>
+                    <div class="cal-head">Ig</div>
+                    
+                    <!-- Ekainak 1 Astelehena da -->
+                    <div class="cal-day">1 <div class="event-dots"><div class="dot dot-izot" title="IZOT 4ºE 12:15"></div><div class="dot dot-val2" title="Balioak 2ºC 09:55"></div><div class="dot dot-val2" title="Balioak 2ºE 14:05"></div></div></div>
+                    <div class="cal-day">2 <div class="event-dots"><div class="dot dot-fk" title="F&K 3ºC 12:15"></div><div class="dot dot-val1" title="Balioak 1ºE 10:50"></div></div></div>
+                    <div class="cal-day">3 <div class="event-dots"><div class="dot dot-fk" title="F&K 3ºE 09:00 / 3ºC 10:50"></div></div></div>
+                    <div class="cal-day">4 <div class="event-dots"><div class="dot dot-fk" title="F&K 3ºC 12:15"></div><div class="dot dot-val1" title="Balioak 1ºC 13:10"></div><div class="dot dot-izot" title="IZOT 4ºE 14:05"></div></div></div>
+                    <div class="cal-day">5 <div class="event-dots"><div class="dot dot-fk" title="F&K 3ºE 09:55"></div></div></div>
+                    <div class="cal-day disabled">6</div>
+                    <div class="cal-day disabled">7</div>
+                    
+                    <div class="cal-day">8 <div class="event-dots"><div class="dot dot-izot" title="IZOT Bisita 12:15"></div><div class="dot dot-val2" title="Balioak 2ºC 09:55"></div><div class="dot dot-val2" title="Balioak 2ºE 14:05"></div></div></div>
+                    <div class="cal-day">9 <div class="event-dots"><div class="dot dot-fk" title="F&K 3ºC 12:15"></div><div class="dot dot-val1" title="Balioak 1ºE 10:50"></div></div></div>
+                    <div class="cal-day">10 <div class="event-dots"><div class="dot dot-fk" title="F&K 3ºE 09:00 / 3ºC 10:50"></div></div></div>
+                    <div class="cal-day">11 <div class="event-dots"><div class="dot dot-fk" title="F&K 3ºC 12:15"></div><div class="dot dot-val1" title="Balioak 1ºC 13:10"></div><div class="dot dot-izot" title="IZOT 4ºE 14:05"></div></div></div>
+                    <div class="cal-day">12 <div class="event-dots"><div class="dot dot-fk" title="F&K 3ºE 09:55"></div></div></div>
+                    <div class="cal-day disabled">13</div>
+                    <div class="cal-day disabled">14</div>
+
+                    <div class="cal-day">15 <div class="event-dots"><div class="dot dot-izot" title="IZOT 4ºE 12:15"></div><div class="dot dot-val2" title="Balioak 2ºC 09:55"></div><div class="dot dot-val2" title="Balioak 2ºE 14:05"></div></div></div>
+                    <div class="cal-day">16 <div class="event-dots"><div class="dot dot-fk" title="F&K 3ºC 12:15"></div><div class="dot dot-val1" title="Balioak 1ºE 10:50"></div></div></div>
+                    <div class="cal-day">17 <div class="event-dots"><div class="dot dot-fk" title="F&K 3ºE 09:00 / 3ºC 10:50"></div></div></div>
+                    <div class="cal-day">18 <div class="event-dots"><div class="dot dot-fk" title="F&K 3ºC 12:15"></div><div class="dot dot-val1" title="Balioak 1ºC 13:10"></div><div class="dot dot-izot" title="IZOT 4ºE 14:05"></div></div></div>
+                    <div class="cal-day disabled">19</div>
+                    <div class="cal-day disabled">20</div>
+                    <div class="cal-day disabled">21</div>
+                </div>
+                <div class="calendar-legend">
+                    <div class="legend-item"><div class="dot dot-fk"></div> Fisika eta Kimika</div>
+                    <div class="legend-item"><div class="dot dot-val1"></div> Balio Etikoak 1º</div>
+                    <div class="legend-item"><div class="dot dot-val2"></div> Balio Etikoak 2º</div>
+                    <div class="legend-item"><div class="dot dot-izot"></div> IZOT 4ºE</div>
+                    <div class="legend-note"><span class="group-tag tag-e">E Eredua</span> <span class="group-tag tag-c">C Eredua</span> xehetasunak fitxetan.</div>
+                </div>
             </div>
 
             <div class="tools-grid">
@@ -397,7 +562,11 @@
         <section id="fk" class="tab-pane">
             <div class="header-section">
                 <h1>Fisika eta Kimika (3º DBH)</h1>
-                <p>Taldeak: 3ºC (Gazt) eta 3ºE (Eusk)</p>
+                <p>Taldeak: 3ºC eta 3ºE</p>
+                <div>
+                    <span class="group-tag tag-c"><i class="fa-solid fa-language"></i> 3ºC (Gazt): Asteartea 12:15, Asteazkena 10:50, Osteguna 12:15</span>
+                    <span class="group-tag tag-e"><i class="fa-solid fa-language"></i> 3ºE (Eusk): Asteazkena 09:00, Ostirala 09:55</span>
+                </div>
             </div>
             
             <div class="timeline-container">
@@ -410,10 +579,6 @@
                     <div class="timeline-body">
                         <p>Zinematikako azken zalantzak argituko ditugu. Ondoren, <strong>Flipped Classroom (Ikasgela Iraulia)</strong> proiektuaren antolaketa egingo dugu.</p>
                         <p>Taldeak osatu eta hurrengo gaiak banatuko dira: Dinamika (Newtonen legeak) eta Energia. Ikasleek irakasle rola hartuko dute.</p>
-                        <div class="mb-2">
-                            <span class="group-tag">3ºC: Mar 12:15, Mié 10:50, Jue 12:15</span>
-                            <span class="group-tag">3ºE: Mié 09:00</span>
-                        </div>
                     </div>
                 </div>
 
@@ -425,9 +590,6 @@
                     </div>
                     <div class="timeline-body">
                         <p>Talde bakoitzak bere gaia (Dinamika edo Energia) azalduko du klase aurrean. Aldi berean, gainerako ikasleek beren kideak ebaluatuko dituzte Genially-ko errubrika bat erabiliz.</p>
-                        <div class="mb-2">
-                            <span class="group-tag">3ºE: Vie 09:55</span>
-                        </div>
                         <br>
                         <a href="https://genially.com/es/plantilla/rubrica-evaluacion/?v=B" target="_blank" class="resource-link">
                             <i class="fa-solid fa-check-double"></i> Errubrikaren Txantiloia (Genially)
@@ -457,6 +619,10 @@
             <div class="header-section">
                 <h1>Balio Etikoak (1º DBH)</h1>
                 <p>Taldeak: 1ºE eta 1ºC</p>
+                <div>
+                    <span class="group-tag tag-e"><i class="fa-solid fa-language"></i> 1ºE (Eusk): Asteartea 10:50</span>
+                    <span class="group-tag tag-c"><i class="fa-solid fa-language"></i> 1ºC (Gazt): Osteguna 13:10</span>
+                </div>
             </div>
 
             <div class="timeline-container">
@@ -469,10 +635,6 @@
                     <div class="timeline-body">
                         <p>Gelan simulazio jolas bat egingo dugu: baliabideak nahita modu desorekatuan banatuko ditugu taldeen artean (batzuei dena, besteei ezer ez).</p>
                         <p>Helburua ezintasuna eta bidegabekeria sentitzea da, egoera hau mundu errealeko ekonomiara estrapolatu aurretik.</p>
-                        <div class="mb-2">
-                            <span class="group-tag">1ºE: Mar 10:50</span>
-                            <span class="group-tag">1ºC: Jue 13:10</span>
-                        </div>
                         <br>
                         <a href="https://irati-lab.github.io/ud6.denontzatdugu/" target="_blank" class="resource-link">
                             <i class="fa-solid fa-globe"></i> Munduaren simulazio jokoa
@@ -516,13 +678,17 @@
         <section id="val2" class="tab-pane">
             <div class="header-section">
                 <h1>Balio Etikoak (2º DBH)</h1>
-                <p>Gaia: Aisiaren Etika</p>
+                <p>Gaia: Aisiaren Etika | Taldeak: 2ºC eta 2ºE</p>
+                <div>
+                    <span class="group-tag tag-c"><i class="fa-solid fa-language"></i> 2ºC (Gazt): Astelehena 09:55</span>
+                    <span class="group-tag tag-e"><i class="fa-solid fa-language"></i> 2ºE (Eusk): Astelehena 14:05</span>
+                </div>
             </div>
 
             <div class="timeline-container">
                 <div class="timeline-item active">
                     <div class="timeline-header">
-                        <span class="date-badge val2-badge">Ekaina osoan</span>
+                        <span class="date-badge val2-badge">Astelehenetan</span>
                         <div class="timeline-title">Ikus-entzunezkoen analisia eta Debatea</div>
                         <i class="fa-solid fa-chevron-down timeline-icon"></i>
                     </div>
@@ -541,6 +707,9 @@
             <div class="header-section">
                 <h1>IZOT (4º DBH - E)</h1>
                 <p>Proiektu Praktikoa: Xaboigintza Artisaua</p>
+                <div>
+                    <span class="group-tag tag-e"><i class="fa-solid fa-language"></i> 4ºE (Eusk): Astelehena 12:15, Osteguna 14:05</span>
+                </div>
             </div>
 
             <div class="timeline-container">
@@ -552,10 +721,6 @@
                     </div>
                     <div class="timeline-body">
                         <p>Glizerina oinarriak eta saponifikazio metodo artisaua erabiliz xaboiak nola sortu ikasi dugu. Egun hauetan, laborategian ekoizpen prozesuaren aldaerak aztertuko ditugu (tenperatura, esentziak, ukimena).</p>
-                        <div class="mb-2">
-                            <span class="group-tag">Lun 12:15</span>
-                            <span class="group-tag">Jue 14:05</span>
-                        </div>
                         <br>
                         <a href="https://irati-lab.github.io/xaboiaoinarrizkoa/" target="_blank" class="resource-link">
                             <i class="fa-solid fa-flask"></i> Laborategiko Fasea: Irati-Lab gida
