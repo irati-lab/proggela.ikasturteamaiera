@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gela Programazioa | Ekaina 2026</title>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Ikonoak -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -36,7 +38,7 @@
             display: flex;
             height: 100vh;
             background-color: var(--bg-main);
-            overflow: hidden; /* Scrolla edukian bakarrik */
+            overflow: hidden;
         }
 
         /* --- SIDEBAR (Nabigazio Bertikala) --- */
@@ -94,7 +96,6 @@
             border-left-color: var(--primary);
         }
 
-        /* Kolore pertsonalizatuak aktibo daudenean */
         .nav-item[data-target="fk"].active { border-left-color: var(--accent-fk); }
         .nav-item[data-target="val1"].active { border-left-color: var(--accent-val1); }
         .nav-item[data-target="val2"].active { border-left-color: var(--accent-val2); }
@@ -123,7 +124,6 @@
             font-size: 1.1rem;
         }
 
-        /* Tab Edukiak ezkutatu/erakutsi */
         .tab-pane {
             display: none;
             animation: fadeIn 0.4s ease-out forwards;
@@ -180,7 +180,6 @@
         .tool-info h3 { font-size: 1.1rem; margin-bottom: 0.25rem; }
         .tool-info p { font-size: 0.85rem; color: #6b7280; }
 
-        /* Icon Colors */
         .bg-sheets { background: #10b981; }
         .bg-calendar { background: #3b82f6; }
         .bg-classroom { background: #f59e0b; }
@@ -245,7 +244,6 @@
             transition: transform 0.3s ease;
         }
 
-        /* Akordeoiaren edukia */
         .timeline-body {
             max-height: 0;
             overflow: hidden;
@@ -254,7 +252,7 @@
         }
 
         .timeline-item.active .timeline-body {
-            max-height: 500px; /* Nahikoa edukiari */
+            max-height: 500px;
             padding: 1.5rem;
             border-top: 1px solid var(--border);
         }
@@ -314,6 +312,7 @@
 </head>
 <body>
 
+    <!-- SIDEBAR -->
     <aside class="sidebar">
         <div class="brand">
             <i class="fa-solid fa-layer-group"></i> NireGela Pro
@@ -337,8 +336,10 @@
         </nav>
     </aside>
 
+    <!-- EDUKI NAGUSIA -->
     <main class="main-content">
 
+        <!-- 1. DASHBOARD -->
         <section id="dashboard" class="tab-pane active">
             <div class="header-section">
                 <h1>Irakaslearen Aginte-panela</h1>
@@ -346,7 +347,7 @@
             </div>
             
             <div class="info-panel">
-                <i class="fa-solid fa-circle-info"></i> Ikuskaritzarako aurkeztu beharreko gela-programazio interaktiboa. Nabigatu ezkerreko menuan ikasgai bakoitzaren plangintza ikusteko.
+                <i class="fa-solid fa-circle-info"></i> Ongi etorri zure irakasle-panelera. Hemen dituzu eskuragarri azken txanparako unitate didaktikoak, baliabideak eta ebaluazio-tresnak. Nabigatu ezkerreko menuan ikasgai bakoitzaren plangintza ikusteko.
             </div>
 
             <div class="tools-grid">
@@ -392,6 +393,7 @@
             </div>
         </section>
 
+        <!-- 2. FISIKA ETA KIMIKA -->
         <section id="fk" class="tab-pane">
             <div class="header-section">
                 <h1>Fisika eta Kimika (3º DBH)</h1>
@@ -402,11 +404,11 @@
                 <div class="timeline-item">
                     <div class="timeline-header">
                         <span class="date-badge fk-badge">Ekainak 1 - 4</span>
-                        <div class="timeline-title">Kinematikaren itxiera eta Proiektuaren hasiera</div>
+                        <div class="timeline-title">Zinematikaren itxiera eta Proiektuaren hasiera</div>
                         <i class="fa-solid fa-chevron-down timeline-icon"></i>
                     </div>
                     <div class="timeline-body">
-                        <p>Kinematikako azken zalantzak argituko ditugu. Ondoren, <strong>Flipped Classroom (Ikasgela Iraulia)</strong> proiektuaren antolaketa egingo dugu.</p>
+                        <p>Zinematikako azken zalantzak argituko ditugu. Ondoren, <strong>Flipped Classroom (Ikasgela Iraulia)</strong> proiektuaren antolaketa egingo dugu.</p>
                         <p>Taldeak osatu eta hurrengo gaiak banatuko dira: Dinamika (Newtonen legeak) eta Energia. Ikasleek irakasle rola hartuko dute.</p>
                         <div class="mb-2">
                             <span class="group-tag">3ºC: Mar 12:15, Mié 10:50, Jue 12:15</span>
@@ -450,6 +452,7 @@
             </div>
         </section>
 
+        <!-- 3. BALIO ETIKOAK 1º -->
         <section id="val1" class="tab-pane">
             <div class="header-section">
                 <h1>Balio Etikoak (1º DBH)</h1>
@@ -471,6 +474,9 @@
                             <span class="group-tag">1ºC: Jue 13:10</span>
                         </div>
                         <br>
+                        <a href="https://irati-lab.github.io/ud6.denontzatdugu/" target="_blank" class="resource-link">
+                            <i class="fa-solid fa-globe"></i> Munduaren simulazio jokoa
+                        </a>
                         <a href="https://www.oxfamintermon.org/es/publicacion/informe_vivir_desigualdad" target="_blank" class="resource-link" style="color: #b91c1c;">
                             <i class="fa-solid fa-file-pdf"></i> Oxfam Intermón: Desberdintasunari buruzko txostena
                         </a>
@@ -506,6 +512,7 @@
             </div>
         </section>
 
+        <!-- 4. BALIO ETIKOAK 2º -->
         <section id="val2" class="tab-pane">
             <div class="header-section">
                 <h1>Balio Etikoak (2º DBH)</h1>
@@ -513,7 +520,8 @@
             </div>
 
             <div class="timeline-container">
-                <div class="timeline-item active"> <div class="timeline-header">
+                <div class="timeline-item active">
+                    <div class="timeline-header">
                         <span class="date-badge val2-badge">Ekaina osoan</span>
                         <div class="timeline-title">Ikus-entzunezkoen analisia eta Debatea</div>
                         <i class="fa-solid fa-chevron-down timeline-icon"></i>
@@ -528,10 +536,11 @@
             </div>
         </section>
 
+        <!-- 5. IZOT -->
         <section id="izot" class="tab-pane">
             <div class="header-section">
                 <h1>IZOT (4º DBH - E)</h1>
-                <p>Proiektu Praktikoa: Sapoi-gintza Artisaua</p>
+                <p>Proiektu Praktikoa: Xaboigintza Artisaua</p>
             </div>
 
             <div class="timeline-container">
@@ -542,7 +551,7 @@
                         <i class="fa-solid fa-chevron-down timeline-icon"></i>
                     </div>
                     <div class="timeline-body">
-                        <p>Glizerina oinarriak eta saponifikazio metodo artisaua erabiliz sapoiak nola sortu ikasi dugu. Egun hauetan, laborategian ekoizpen prozesuaren aldaerak aztertuko ditugu (tenperatura, esentziak, ukimena).</p>
+                        <p>Glizerina oinarriak eta saponifikazio metodo artisaua erabiliz xaboiak nola sortu ikasi dugu. Egun hauetan, laborategian ekoizpen prozesuaren aldaerak aztertuko ditugu (tenperatura, esentziak, ukimena).</p>
                         <div class="mb-2">
                             <span class="group-tag">Lun 12:15</span>
                             <span class="group-tag">Jue 14:05</span>
@@ -557,22 +566,27 @@
                 <div class="timeline-item">
                     <div class="timeline-header">
                         <span class="date-badge izot-badge">Ekainak 8 (Astelehena)</span>
-                        <div class="timeline-title">Bisita Gidatua: "Montseren Sapoiak"</div>
+                        <div class="timeline-title">Bisita Gidatua: "Montseren Xaboiak"</div>
                         <i class="fa-solid fa-chevron-down timeline-icon"></i>
                     </div>
                     <div class="timeline-body">
-                        <p>Irteera pedagogikoa: Montseren tailerrera bisita gidatua egingo dugu, laborategian ikasitakoa eskala handiagoan (eta modu profesionalean) nola egiten den ikusteko eta prozesua alderatzeko.</p>
+                        <p>Irteera pedagogikoa: Montseren xaboi-tailerrera bisita gidatua egingo dugu, laborategian ikasitakoa eskala handiagoan (eta modu profesionalean) nola egiten den ikusteko eta prozesua alderatzeko.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-header">
                         <span class="date-badge izot-badge" style="background:#4b5563;">Ekainak 9 - 18</span>
-                        <div class="timeline-title">Proiektuaren Amaiera</div>
+                        <div class="timeline-title">Proiektuaren Amaiera eta Txukunketa</div>
                         <i class="fa-solid fa-chevron-down timeline-icon"></i>
                     </div>
                     <div class="timeline-body">
-                        <p>Ikasleek beren sapoi-laginak eta laborategiko memoria entregatu beharko dituzte. Aurretik gainditu gabe duten ikasleekin klase bereziak egingo dira berreskurapenak prestatzeko.</p>
+                        <p>Ikasle guztiek gainditu dutenez, ez dago berreskurapenik. Azken aste hauetan honako lan hauek egingo ditugu:</p>
+                        <ul>
+                            <li>Hiruhilekoan zehar egindako produktuen paketatzea (packaging-a).</li>
+                            <li>Merchandising kanpaina txiki baten prestaketa.</li>
+                            <li>Laborategiaren erabateko txukunketa, inbentarioa eta antolaketa lanak hurrengo ikasturtera begira.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -580,6 +594,7 @@
 
     </main>
 
+    <!-- JavaScript - Interaktibitatea kudeatzeko -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // 1. Nabigazio Menuaren Logika
@@ -588,14 +603,11 @@
 
             navItems.forEach(item => {
                 item.addEventListener('click', () => {
-                    // Kendu 'active' klasea guztiei
                     navItems.forEach(nav => nav.classList.remove('active'));
                     tabPanes.forEach(tab => tab.classList.remove('active'));
 
-                    // Gehitu 'active' klikatutakoari
                     item.classList.add('active');
                     
-                    // Erakutsi dagokion edukia
                     const targetId = item.getAttribute('data-target');
                     document.getElementById(targetId).classList.add('active');
                 });
@@ -607,10 +619,6 @@
             timelineHeaders.forEach(header => {
                 header.addEventListener('click', () => {
                     const parentItem = header.parentElement;
-                    
-                    // Beste guztiak itxi nahi badituzu (aukerakoa), deskomentatu hurrengo lerroa:
-                    // document.querySelectorAll('.timeline-item').forEach(item => { if(item !== parentItem) item.classList.remove('active') });
-                    
                     parentItem.classList.toggle('active');
                 });
             });
